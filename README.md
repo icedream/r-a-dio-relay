@@ -12,6 +12,7 @@ Requirements
 - Liquidsoap >= 1.0
 - Liquidsoap LADSPA support & vLevel plugin
 - Liquidsoap AAC+ encoding support
+- Liquidsoap OPUS encoding support
 
 License
 =======

@@ -59,13 +59,20 @@ shout = output.icecast(
 	description=ICECAST_DESCRIPTION,
 	name=ICECAST_NAME,
 	genre=ICECAST_GENRE,
-	public=ICECAST_PUBLIC
+	public=ICECAST_PUBLIC,
+	user=ICECAST_USERNAME,
+	port=ICECAST_PORT,
+	host=ICECAST_HOST
 )
 
 # Stream as aac+
-# If you don't want to use a single mount,
-# add the others here.
 shout(
-	mount=ICECAST_MOUNT,
-	%aacplus(bitrate=ICECAST_AAC_BITRATE), radio
+	mount=ICECAST_MOUNT ^ "/aacp",
+	%aacplus(bitrate=56), radio
+)
+
+# Stream as opus
+shout(
+	mount=ICECAST_MOUNT ^ "/opus",
+	%opus(bitrate=32), radio
 )
